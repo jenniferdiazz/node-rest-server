@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+app.use(require('./routes/usuario'));
 
 // respond with "hello world" when a GET request is made to the homepage
 /*app.get('/', function(req, res) {
