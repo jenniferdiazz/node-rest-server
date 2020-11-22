@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
-app.use(require('./routes/usuario'));
+app.use(require('./routes/usuario.js'));
 
 // respond with "hello world" when a GET request is made to the homepage
 /*app.get('/', function(req, res) {
@@ -23,6 +23,6 @@ mongoose.connect('mongodb://localhost:27017/cafe', (err, res)=>{
 
 });
 
-app.listen(process.env.Port, () => {
-    console.log('Escuchando puerto: ', 3000);
+app.listen(process.env.PORT, () => {
+    console.log('Escuchando puerto: ', process.env.PORT);
 });
