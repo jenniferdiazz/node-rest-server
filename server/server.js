@@ -17,11 +17,18 @@ app.use(require('./routes/usuario.js'));
 });*/
 
 
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
+
 mongoose.connect('mongodb://localhost:27017/cafe', (err, res)=>{
     if(err) throw err;
     console.log('Base de datos ONLINE');
 
 });
+
 
 app.listen(process.env.PORT, () => {
     console.log('Escuchando puerto: ', process.env.PORT);
